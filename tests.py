@@ -11,11 +11,12 @@ for i in data.json()['data']:
     
 temperatures.sort()
 
-def checkMin():
-    assert mintemp() == temperatures[0]
+class TestClass():
+    def Test_one(self):
+        assert(mintemp(), temperatures[0])
 
-def checkMed():
-    assert mediumtemp() == temperatures[2]
+    def Test_two(self):
+        assert(mediumtemp(), temperatures[2])
 
-def checkMax():
-    assert maxtemp() == temperatures[4]
+    def Test_three(self):
+        assert(maxtemp(), temperatures[4])
