@@ -1,21 +1,21 @@
+from main import mintemp, mediumtemp, maxtemp
+
 import requests
-import json
 
 data = requests.post('https://tues2022.proxy.beeceptor.com/my/api/test')
 temperatures = []
-
-def mintemp():
-    return temperatures[0]
-
-def mediumtemp():
-    return temperatures[2]
-
-def maxtemp():
-    return temperatures[4]
-
 
 for i in data.json()['data']:
     temp = i['temperature']
     temperatures.append(temp)
     
 temperatures.sort()
+
+def checkMin():
+    assert mintemp() == temperatures[0]
+
+def checkMed():
+    assert mediumtemp() == temperatures[2]
+
+def checkMax():
+    assert maxtemp() == temperatures[4]
