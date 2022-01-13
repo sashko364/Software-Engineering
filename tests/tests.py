@@ -1,4 +1,5 @@
-from main import mintemp, mediumtemp, maxtemp
+from unittest import TestCase
+from ..src.temperatures import mintemp, mediumtemp, maxtemp  # explicit relative import
 
 import requests
 
@@ -11,7 +12,7 @@ for i in data.json()['data']:
     
 temperatures.sort()
 
-class TestClass():
+class TestClass(TestCase):
     def Test_one(self):
         assert(mintemp(), temperatures[0])
 
